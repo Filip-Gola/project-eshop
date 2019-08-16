@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body> 
+
+<body>
     <header>
-        <nav></nav>
+        <!-- navigacia -->
+        <!-- Velka zariadenia - id horizontal nav sa mi nepaci mozno to este premenujem neskor-->
+        <div>
+            <nav id='horizontal-navigation'>
+                <div id="brand-logo" class="nav-item-1"><a href="#">2019 Shoeniverse</a></div>
+                <div id="hover-menu-btn" class="nav-item-2"><a href="#">Shop</a></div>
+                <div id="shopping-cart" class="nav-item-3"><a href="#">Cart</a></div>
+                <!-- search ma vlastny div mimo navigacie ktory sa aktivuje po kliku na lupu -->
+                <div id="search-btn" class="nav-item-4"><a href="#" class="fas fa-search"></a></div>
+            </nav>
+            <div id="hover-menu">
+                <div id="hover-menu-list">
+                    <div class="hover-menu-list-item"><a href="#">Women</a></div>
+                    <div class="hover-menu-list-item"><a href="#">Men</a></div>
+                    <div class="hover-menu-list-item"><a href="#">Kids</a></div>
+                    <div class="hover-menu-list-item"><a href="#">Sale</a></div>
+                    <div class="hover-menu-list-item"><a href="#">Blog</a></div>
+                    <div class="hover-menu-list-item"><a href="#">About us</a></div>
+                </div>
+                <div id="hover-menu-presentation">
+                    <div class="presentation-item"><a href="#"><img src="img/women.png" alt="Category-women"></a></div>
+                    <div class="presentation-item"><a href="#"><img src="img/women.png" alt="Category-women"></a></div>
+                    <div class="presentation-item"><a href="#"><img src="img/women.png" alt="Category-women"></a></div>
+                    <div class="presentation-item"><a href="#"><img src="img/women.png" alt="Category-women"></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- navigacia male zariadenia -->
+        <div>
+            <nav id="navigation-mobile-devices">
+                <div id="btn-mobile-menu"><a href="#" class="fas fa-bars"></a></div>
+                <div id="mobile-brand-logo"><a href="#">2019 Shoeniverse</a></div>
+                <div id="mobile-shopping-cart">
+                    <a href="#">[<span id="cart-item-count">0</span>]</a>
+                </div>
+            </nav>
+            <div id="mobile-menu">
+                <div class="mobile-menu-list-item"><a style="color:red;"href="#">Sale</a></div>
+                <div class="mobile-menu-list-item"><a href="#">Women</a></div>
+                <div class="mobile-menu-list-item"><a href="#">Men</a></div>
+                <div class="mobile-menu-list-item"><a href="#">Kids</a></div>
+                <div class="mobile-menu-list-item"><a href="#">Blog</a></div>
+                <div class="mobile-menu-list-item"><a href="#">About us</a></div>
+                <div><a href="#" class="fas fa-search"></a></div>
+            </div>
+        </div>
+        <!-- koniec navigacie pre male zariadenia -->
+        <!-- koniec uprav -->
 
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -44,7 +94,7 @@
             </a>
         </div>
     </header>
-  
+
     <main>
         <div class="container">
             <div class="row">
@@ -110,9 +160,27 @@
             <p> &copy; 2019 Shoeniverse - All rights reserved</p>
         </div>
     </footer>
+    <!-- Div na hladanie produktov - position absolute po kliknuti prekryje main section -->
+    <div id="search-block">
+        <div id="search-input-block">
+            <input id="search-input" type="text" placeholder="Search">
+            <span id="search-btn">Go</span>
+        </div>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- pridal som plnu verziu Jquery pre funkcie ako fadeIn a fadeOut -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
