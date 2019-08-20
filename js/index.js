@@ -10,9 +10,7 @@ $(document).ready(function () {
 	let width = $(window).width();
 	//sirka pre male obrazovky
 	if (width <= 770) {
-		$('#navigation-mobile-devices').show();
-		$('#horizontal-navigation').hide();
-
+		
 		// klik na hamburger menu, porovna ci je #mobile-menu zobrazene alebo nie. Ak neni zobraz ho...
 		$('#btn-mobile-menu').click(function () {
 			if($('#mobile-menu').css('display') === 'none'){
@@ -25,9 +23,6 @@ $(document).ready(function () {
 		}); 
 	} else {
 		// velke obrazovky
-		$('#navigation-mobile-devices').hide();
-		$('#horizontal-navigation').show();
-
 		$('#hover-menu-btn').hover(function () {
 			$('#hover-menu').fadeIn("slow");
 		})

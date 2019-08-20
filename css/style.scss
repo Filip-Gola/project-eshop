@@ -7,16 +7,38 @@ body {
     header{
         //zatial som to nechal tu aby som ti nenarusil tvoje [a]tagy  ale mohli by sme im zadefinovat 
         //nejaky zaklad hore v body aby sme ich neduplikovali
+        
+        // A linky upravene aby boli rovnake ako vo footri.
         a{  
             color: $font-black;
+            font-size: 20px;
+            padding: 0 10px;
+            position: relative;
             &:hover{
-                color:red;
                 text-decoration: none;
-                cursor: pointer;
-            }    
+                color: $font-black;
+            }
+            &:after{
+                background: none repeat scroll 0 0 transparent;
+                bottom: -5px;
+                content: "";
+                display: block;
+                height: 2px;
+                left: 50%;
+                position: absolute;
+                background: $font-black;
+                transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                width: 0;
+            }
+            &:hover:after { 
+                width: 100%; 
+                left: 0; 
+            } 
         }
+
         // navigacia velky screen
         #horizontal-navigation{
+            position: relative;
             width: 95%;
             margin: 0 auto;
             display: grid;
@@ -43,10 +65,13 @@ body {
         }
         //hover menu pri nacitani stranky sa strati hover
         #hover-menu{
+            background-color: $body-color;
+            z-index: 50;
+            position: absolute;
             display: grid;
-            width: 95%;
+            width: 100%;
             margin: 0 auto;
-            border-top: 1px solid black;
+            // border-top: 2px solid black;  asi to vyzera lepsie bez borderu.
             grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
             padding: 15px 0px;
             
@@ -59,8 +84,16 @@ body {
                 justify-content: space-around;
                 grid-template-columns: auto auto auto auto;
                 .presentation-item{
-                    img{
-                        width: 100px;
+                    a{
+                        all: unset;
+                        cursor: pointer;
+                        opacity: 0.8;  
+                        &:hover{
+                            opacity: 1;
+                        }
+                        img{
+                            width: 100px;
+                        }
                     }
                 }
             }
@@ -238,10 +271,25 @@ body {
         padding: 0 5px;
     }
 }
+@media only screen and (max-width: 767px) {
+    #navigation-mobile-devices{
+        display: grid !important;
+    }
+    
+    #horizontal-navigation{
+        display: none !important;
+    }
+}
 
 @media only screen and (min-width: 768px) {
     .container {
         max-width: 880px;
+    }
+    #navigation-mobile-devices{
+        display: none !important;
+    }
+    #horizontal-navigation{
+        display: grid !important;
     }
 }
 
