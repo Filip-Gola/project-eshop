@@ -5,6 +5,12 @@ $font-gray: #6c6e70;
 body {
     background-color: $body-color;
     header{
+        .carousel {
+            margin-bottom: 40px; 
+        }
+
+
+
         //zatial som to nechal tu aby som ti nenarusil tvoje [a]tagy  ale mohli by sme im zadefinovat 
         //nejaky zaklad hore v body aby sme ich neduplikovali
         
@@ -117,8 +123,9 @@ body {
         
     }
    main {
-       padding: 80px 0;
+       padding: 50px 0;
 
+    //    HLAVNÁ STRÁNKA
        section {
             margin-top: 20px;
             position: relative;
@@ -207,6 +214,7 @@ body {
             }
 
             .footer-social {
+                white-space: nowrap;
                 a {
                     transition: transform 2s;
 
@@ -249,6 +257,43 @@ body {
                 width: 95%;
                 padding: 10px;
             }
+        }
+    }
+}
+
+// PODSTRÁNKA S KATEGÓRIAMI
+
+.jumbotron {
+    background-color: $font-black;
+    color: $body-color
+}
+
+.to-home-page {
+    display: inline-block;
+    margin: 20px;
+}
+
+.div-with-articles {
+    margin-bottom: 70px;
+
+    article {
+        padding: 15px;
+    
+        .second-img {
+            display: none;
+        }
+    
+        .price {
+            color: black;
+            font-size: 20px;
+        }
+    
+        &:hover .first-img {
+            display: none;
+        }
+    
+        &:hover .second-img {
+            display: block;
         }
     }
 }

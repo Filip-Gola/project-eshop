@@ -2,6 +2,10 @@ body {
   background-color: #fafafa;
 }
 
+body header .carousel {
+  margin-bottom: 40px;
+}
+
 body header a {
   color: #111;
   font-size: 20px;
@@ -136,7 +140,7 @@ body header #mobile-menu {
 }
 
 body main {
-  padding: 80px 0;
+  padding: 50px 0;
 }
 
 body main section {
@@ -226,6 +230,10 @@ body footer .pre-footer .footer-menu a:hover:after {
   left: 0;
 }
 
+body footer .pre-footer .footer-social {
+  white-space: nowrap;
+}
+
 body footer .pre-footer .footer-social a {
   -webkit-transition: -webkit-transform 2s;
   transition: -webkit-transform 2s;
@@ -269,6 +277,41 @@ body #search-block #search-input-block #search-input {
   background-color: #fafafa;
   width: 95%;
   padding: 10px;
+}
+
+.jumbotron {
+  background-color: #111;
+  color: #fafafa;
+}
+
+.to-home-page {
+  display: inline-block;
+  margin: 20px;
+}
+
+.div-with-articles {
+  margin-bottom: 70px;
+}
+
+.div-with-articles article {
+  padding: 15px;
+}
+
+.div-with-articles article .second-img {
+  display: none;
+}
+
+.div-with-articles article .price {
+  color: black;
+  font-size: 20px;
+}
+
+.div-with-articles article:hover .first-img {
+  display: none;
+}
+
+.div-with-articles article:hover .second-img {
+  display: block;
 }
 
 @media only screen and (max-width: 500px) {
