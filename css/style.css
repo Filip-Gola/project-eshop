@@ -1,5 +1,6 @@
 body {
   background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body header .carousel {
@@ -35,108 +36,6 @@ body header a:after {
 body header a:hover:after {
   width: 100%;
   left: 0;
-}
-
-body header #horizontal-navigation {
-  position: relative;
-  width: 95%;
-  margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  font-size: 20px;
-  -ms-grid-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-      grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-  padding: 15px 0px;
-}
-
-body header #horizontal-navigation .nav-item-1 {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-body header #horizontal-navigation .nav-item-2 {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-body header #horizontal-navigation .nav-item-3 {
-  -ms-grid-column: 11;
-  -ms-grid-column-span: 1;
-  grid-column: 11/12;
-  text-align: right;
-}
-
-body header #horizontal-navigation .nav-item-4 {
-  -ms-grid-column: 12;
-  -ms-grid-column-span: 1;
-  grid-column: 12/13;
-  text-align: right;
-}
-
-body header #hover-menu {
-  background-color: #fafafa;
-  z-index: 50;
-  position: absolute;
-  display: -ms-grid;
-  display: grid;
-  width: 100%;
-  margin: 0 auto;
-  -ms-grid-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-      grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-  padding: 15px 0px;
-}
-
-body header #hover-menu #hover-menu-list {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-body header #hover-menu #hover-menu-presentation {
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 8;
-  grid-column: 4/12;
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
-}
-
-body header #hover-menu #hover-menu-presentation .presentation-item a {
-  all: unset;
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-body header #hover-menu #hover-menu-presentation .presentation-item a:hover {
-  opacity: 1;
-}
-
-body header #hover-menu #hover-menu-presentation .presentation-item a img {
-  width: 100px;
-}
-
-body header #navigation-mobile-devices {
-  width: 95%;
-  padding: 15px;
-  margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body header #mobile-menu {
-  width: 95%;
-  margin: 0 auto;
-  padding: 5px;
 }
 
 body main {
@@ -336,25 +235,15 @@ body #search-block #search-input-block #search-input {
 }
 
 @media only screen and (max-width: 767px) {
-  #navigation-mobile-devices {
-    display: -ms-grid !important;
-    display: grid !important;
-  }
-  #horizontal-navigation {
-    display: none !important;
+  .nav-item {
+    width: 25%;
+    padding-left: 10px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 880px;
-  }
-  #navigation-mobile-devices {
-    display: none !important;
-  }
-  #horizontal-navigation {
-    display: -ms-grid !important;
-    display: grid !important;
   }
 }
 
