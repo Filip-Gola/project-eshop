@@ -7,6 +7,10 @@ body header .carousel {
   margin-bottom: 40px;
 }
 
+body header #sale-item {
+  color: #e62424;
+}
+
 body header a {
   color: #111;
   font-size: 20px;
