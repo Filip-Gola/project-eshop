@@ -29,11 +29,19 @@ function renderProductImages(products) {
 function renderProductInfo(products) {
 	let productID = localStorage.getItem('product-id');
 	let product = '';
+	let price;
+	//check ci je produkt v zlave
+	if(products[productID-1].inSale === 'true'){
+		price = products[productID-1].salePrice;
+	}else{
+		price = products[productID-1].price;
+	}
+
 	product += `<h1>${products[productID-1].name.toUpperCase()}</h1>`;
 	product += `<p>${products[productID-1].description}</p>`;
 	product += `<p>${products[productID-1].description}</p>`;
 	product += `<p>${products[productID-1].description}</p>`;
-	product += `<h2>${products[productID-1].price}€</h2>`;
+	product += `<h2>${price}€</h2>`;
 
 	$('#product-info').prepend(product);
 }
