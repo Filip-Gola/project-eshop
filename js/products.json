@@ -39,7 +39,7 @@
     "quantity": 0
   },
   {
-    "id": 11,
+    "id": 4,
     "category": "men",
     "name": "nike air max 270",
     "price": 114.74,
@@ -52,7 +52,7 @@
     "quantity": 0
   },
   {
-    "id": 12,
+    "id": 5,
     "category": "men",
     "name": "nike react element 55",
     "price": 134.94,
@@ -65,7 +65,7 @@
     "quantity": 0
   },
   {
-    "id": 13,
+    "id": 6,
     "category": "men",
     "name": "nike air force 1 mid '07",
     "price": 103.49,
@@ -78,7 +78,7 @@
     "quantity": 0
   },
   {
-    "id": 21,
+    "id": 7,
     "category": "kids",
     "name": "nike jordan big fund (gs)",
     "price": 72.24,
@@ -91,7 +91,7 @@
     "quantity": 0
   },
   {
-    "id": 22,
+    "id": 8,
     "category": "kids",
     "name": "nike tanjun (psv)",
     "price": 53.99,
@@ -104,7 +104,7 @@
     "quantity": 0
   },
   {
-    "id": 23,
+    "id": 9,
     "category": "kids",
     "name": "nike air max 90 ltr (gs)",
     "price": 93.49,
