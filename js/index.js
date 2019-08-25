@@ -6,6 +6,7 @@ $(document).ready(function () {
 
 	$.get("js/products.json", function (products) {
 		renderProductImages(products);
+		renderCarousel(products);
 		renderProductInfo(products);
 	});
 });
@@ -25,6 +26,19 @@ function renderProductImages(products) {
 
 	$('.product-imgs').append(product);
 };
+
+function renderCarousel(products){
+	let productID = localStorage.getItem('product-id');
+	let product = '';
+	product += `<div class="carousel-item active">
+								<img src=${JSON.stringify(products[productID - 1].url[0])} class="d-block w-100" alt="...">
+							</div>`;
+	product += `<div class="carousel-item active">
+								<img src=${JSON.stringify(products[productID - 1].url[1])} class="d-block w-100" alt="...">
+							</div>`;
+
+	$('.carousel-inner').append(product);
+}
 
 function renderProductInfo(products) {
 	let productID = localStorage.getItem('product-id');
