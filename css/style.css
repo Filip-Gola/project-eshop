@@ -44,6 +44,7 @@ body header a:hover:after {
 
 body main {
   padding: 50px 0;
+  margin-bottom: 50px;
 }
 
 body main section {
@@ -217,6 +218,91 @@ body #search-block #search-input-block #search-input {
   display: block;
 }
 
+.product-page img {
+  width: 100%;
+}
+
+.product-page .carousel {
+  display: none;
+}
+
+.product-page .carousel .carousel-indicators li {
+  background-color: #6c6e70;
+}
+
+.product-page h2 {
+  margin-top: 50px;
+}
+
+.product-page form {
+  margin: 50px 0;
+}
+
+.product-page form .form-btn {
+  margin: 30px 0;
+}
+
+.product-page form .form-btn button {
+  margin-right: 15px;
+  width: 135px;
+}
+
+.product-page .protection i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.product-page .protection p {
+  display: inline-block;
+}
+
+.cart-page h1 {
+  text-align: center;
+}
+
+.cart-page table td, .cart-page table th {
+  vertical-align: middle;
+}
+
+.cart-page table th {
+  width: 30px;
+}
+
+.cart-page table td {
+  width: 120px;
+}
+
+.cart-page table .delete {
+  width: 30px;
+}
+
+.cart-page table .delete i {
+  cursor: pointer;
+}
+
+.cart-page table img {
+  width: 100%;
+}
+
+.cart-page .checkout {
+  padding: 0 30px;
+}
+
+.cart-page .checkout th {
+  font-size: 22px;
+}
+
+.cart-page .checkout td {
+  text-align: right;
+}
+
+.cart-page .checkout a {
+  display: block;
+  padding: 10px;
+  max-width: 230px;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 500px) {
   .footer-menu li {
     display: block !important;
@@ -229,6 +315,15 @@ body #search-block #search-input-block #search-input {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
+  }
+  .product-page .product-imgs {
+    display: none;
+  }
+  .product-page .carousel {
+    display: block;
+  }
+  .product-page .form-btn {
+    margin: 30px auto !important;
   }
 }
 
