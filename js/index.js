@@ -30,12 +30,14 @@ function renderProductImages(products) {
 function renderCarousel(products){
 	let productID = localStorage.getItem('product-id');
 	let product = '';
-	product += `<div class="carousel-item active">
-								<img src=${JSON.stringify(products[productID - 1].url[0])} class="d-block w-100" alt="...">
-							</div>`;
-	product += `<div class="carousel-item active">
-								<img src=${JSON.stringify(products[productID - 1].url[1])} class="d-block w-100" alt="...">
-							</div>`;
+	product += `<div class="carousel-item active">`
+	product += `<img src=${JSON.stringify(products[productID - 1].url[0])} class="d-block w-100" alt="...">`
+	product += `</div>`;
+
+	product += `<div class="carousel-item">`
+	product += `<img src=${JSON.stringify(products[productID - 1].url[1])} class="d-block w-100" alt="...">`
+	product += `</div>`;
+
 
 	$('.carousel-inner').append(product);
 }
