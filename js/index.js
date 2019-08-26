@@ -8,6 +8,7 @@ $(document).ready(function () {
 		renderProductImages(products);
 		renderCarousel(products);
 		renderProductInfo(products);
+		renderSizes(products);
 	});
 });
 
@@ -60,4 +61,13 @@ function renderProductInfo(products) {
 	product += `<h2>${price}€</h2>`;
 
 	$('#product-info').prepend(product);
+}
+
+function renderSizes(products){
+	let productID = localStorage.getItem('product-id');
+	let product;
+	for (let size of products[productID - 1].sizes) {
+		product += `<option value=${size}>${size}</option>`;
+	}
+	$('#size').append(product);
 }
