@@ -105,7 +105,7 @@ function renderCarousel(products) {
 	product += `</div>`;
 
 
-	$('#carousel-inner').append(product);
+	$('#carousel-item').append(product);
 };
 
 function renderProductInfo(products) {
