@@ -7,23 +7,23 @@ body header .carousel {
   margin-bottom: 40px;
 }
 
-body header #sale-item {
-  color: #e62424;
-}
-
-body header a {
+body header nav a {
   color: #111;
   font-size: 20px;
   padding: 0 10px;
   position: relative;
 }
 
-body header a:hover {
+body header nav .nav-link {
+  margin: 0 5px;
+}
+
+body header nav .nav-link:hover {
   text-decoration: none;
   color: #111;
 }
 
-body header a:after {
+body header nav .nav-link:after {
   background: none repeat scroll 0 0 transparent;
   bottom: -5px;
   content: "";
@@ -37,9 +37,25 @@ body header a:after {
   width: 0;
 }
 
-body header a:hover:after {
+body header nav .nav-link:hover:after {
   width: 100%;
   left: 0;
+}
+
+body header nav .sale {
+  color: #e62424 !important;
+}
+
+body header nav .navbar-cart {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  margin: 0 20px;
+}
+
+body header nav .navbar-cart:hover {
+  color: #111;
+  text-decoration: none;
 }
 
 body main {
@@ -268,6 +284,10 @@ body #search-block #search-input-block #search-input {
   width: 135px;
 }
 
+.product-page form .form-btn button a {
+  color: #fafafa;
+}
+
 .product-page .protection i {
   font-size: 30px;
   margin-right: 10px;
@@ -331,6 +351,25 @@ body #search-block #search-input-block #search-input {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .nav-item {
+    width: 30% !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-collapse {
+    text-align: center;
+  }
+  .navbar-collapse .nav-item {
+    margin: 0 auto;
+  }
+  .navbar-collapse .form-inline {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .section-overlay {
     display: -webkit-box !important;
@@ -345,6 +384,12 @@ body #search-block #search-input-block #search-input {
   }
   .product-page .form-btn {
     margin: 30px auto !important;
+  }
+}
+
+@media only screen and (max-width: 1055px) {
+  .nav-link {
+    margin: 0 !important;
   }
 }
 

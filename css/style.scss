@@ -9,35 +9,74 @@ body {
         .carousel {
             margin-bottom: 40px; 
         }
-        #sale-item{
-            color: #e62424;
-        }
-        a {
-            color: $font-black;
-            font-size: 20px;
-            padding: 0 10px;
-            position: relative;
-            &:hover {
-                text-decoration: none;
+
+        nav {
+
+            a {
                 color: $font-black;
+                font-size: 20px;
+                padding: 0 10px;
+                position: relative;
+            } 
+
+            .nav-link {
+                margin: 0 5px;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $font-black;
+                }
+
+                &:after {    
+                    background: none repeat scroll 0 0 transparent;
+                    bottom: -5px;
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    left: 50%;
+                    position: absolute;
+                    background: $font-black;
+                    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                    width: 0;
+                }
+
+                &:hover:after { 
+                    width: 100%; 
+                    left: 0; 
+                }
             }
-            &:after {    
-                background: none repeat scroll 0 0 transparent;
-                bottom: -5px;
-                content: "";
-                display: block;
-                height: 2px;
-                left: 50%;
-                position: absolute;
-                background: $font-black;
-                transition: width 0.3s ease 0s, left 0.3s ease 0s;
-                width: 0;
+
+            .sale {
+                color: #e62424 !important;
             }
-            &:hover:after { 
-                width: 100%; 
-                left: 0; 
-             }
-         }    
+
+            .navbar-cart {
+                display: inline-block;
+                color: rgba(0,0,0,.5);
+                font-size: 25px;
+                margin: 0 20px;
+
+                &:hover {
+                    color: $font-black;
+                    text-decoration: none;
+                }
+
+                // počet produktov v košíku pri ikonke
+                
+                // .badge {
+                //     font-size: 12px;
+                //     background: $font-black;
+                //     color: $body-color;
+                //     padding: 3px;
+                //     vertical-align: top;
+                //     margin-left: -15px;
+                //     border-radius: 50%;
+                //     width: 20px;
+                //     height: 20px;
+                //     line-height: 17px;
+                // }
+            }
+        }
     }
    main {
        padding: 50px 0;
@@ -266,6 +305,10 @@ body {
             button {
                 margin-right: 15px;
                 width: 135px;
+
+                a {
+                    color: $body-color;
+                }
             }
         }
     }
@@ -347,6 +390,28 @@ body {
     }
 }
 
+@media only screen and (max-width: 767px) {
+    .nav-item {
+        width: 30% !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    .navbar-collapse {
+        text-align: center;
+
+        .nav-item {
+            margin: 0 auto;
+        }
+
+        .form-inline {
+            display: inline-block;
+            margin: 0 auto;
+        }
+    }
+}
+
 @media only screen and (max-width: 992px) {
     .section-overlay {
         display: flex !important;
@@ -367,11 +432,18 @@ body {
     }
 }
 
+@media only screen and (max-width: 1055px) {
+    .nav-link {
+        margin: 0 !important;
+    }
+}
+
 @media only screen and (max-width: 1204x) {
     .footer-social a {
         padding: 0 5px;
     }
 }
+
 @media only screen and (max-width: 767px) {
     .nav-item{
         width: 25%;
