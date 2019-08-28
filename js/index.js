@@ -4,21 +4,65 @@ $(document).ready(function () {
 
 	$('.product-info').click(getProductId);
 
-	$.get("js/products.json", function (products) {
-		renderProductImages(products);
-		renderCarousel(products);
-		renderProductInfo(products);
-		renderSizes(products);
-	});
+	if (window.location.href.search('product.html') != -1) {
+		$.get("js/products.json", function (products) {
+			renderProductImages(products);
+			renderCarousel(products);
+			renderProductInfo(products);
+			renderSizes(products);
+		});
+
+		$('.product-btn').click(addItemToCart);
+	};
 
 
-	$('.product-btn').click(addItemToCart);
-
-	if(window.location.href.search('cart.html') != -1){
+	if (window.location.href.search('cart.html') != -1) {
 		renderListOfProducts();
 		displayTotalPrice();
-	}	
+
+		// $('.delete-btn').click(function(){
+		// 	deleteProduct(target);
+		// 	displayTotalPrice();
+		// });
+	};
 });
+
+// funkciu delte musim dokoncit
+
+// function deleteProduct(target){
+// 	if(target.className === 'fas fa-times'){
+// 		console.log('mam ta');
+
+// 	}
+
+
+	// let element = $(event.target).parent().parent();
+	// console.log(`element: ${element}`);
+	// $('#table-of-products').remove(element);
+	
+	
+	// UI.prototype.deleteBook = function(target){
+	// 	if(target.className === 'delete') {
+	// 		target.parentElement.parentElement.remove();
+	// 	}
+	// }
+// }
+
+function displayTotalPrice() {
+	let products;
+
+	if (localStorage.getItem('products') === null) {
+		products = [];
+	} else {
+		products = JSON.parse(localStorage.getItem('products'));
+		let totalPrice = 0;
+		for (let i = 0; i < products.length; i++) {
+			totalPrice += Number(products[i].quantity) * Number(products[i].finalPrice);
+		}
+
+		$('#sub-total').text(totalPrice.toFixed(2));
+	}
+};
 
 
 
@@ -29,7 +73,7 @@ function renderListOfProducts() {
 		products = [];
 	} else {
 		products = JSON.parse(localStorage.getItem('products'));
-		
+
 		for (let i = 0; i < products.length; i++) {
 			let product = '';
 			product += `<tr class="prod-item">`;
@@ -41,12 +85,12 @@ function renderListOfProducts() {
 			product += `<td>Size: ${products[i].size}</td>`;
 			product += `<td>Quantity: <span class="prod-quantity">${products[i].quantity}</span></td>`;
 			product += `<td>Price: <span class="prod-price">${products[i].finalPrice}<span> €</td>`;
-			product += `<td class="delete"><i class="fas fa-times"></i></td>`;
-		
+			product += `<td class="delete-btn"><i class="fas fa-times"></i></td>`;
+
 			$('#table-of-products').append(product);
 		}
 	}
-}
+};
 
 function addItemToCart() {
 	class productItem {
