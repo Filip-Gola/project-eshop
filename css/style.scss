@@ -226,7 +226,7 @@ body {
 
 .jumbotron {
     background-color: $font-black;
-    color: $body-color
+    color: $body-color;
 }
 
 .to-home-page {
@@ -252,7 +252,8 @@ body {
         }
 
         .sale-price {
-            display: none;
+            display: inline-block;
+            color: #e62424;
         }
         //  Class, kt. sa pridá na normálnu cenu ak je zľava
         .old-price {
@@ -290,15 +291,6 @@ body {
         margin-top: 50px;
         margin-right: 50px;
     } 
-    
-    .sale-price {
-        display: none;
-    }
-    //  Class, kt. sa pridá na normálnu cenu ak je zľava
-    .old-price {
-        color: $font-gray;
-        text-decoration: line-through;
-    }
 
     form {
         margin: 50px 0;
@@ -381,7 +373,41 @@ body {
     }
 }
 
-// ZLAVNENA CENA
+// SALE PODSTRÁNKA
+
+.sale-page {
+
+   .filter {
+       display: flex;
+       justify-content: center;
+       list-style-type: none;
+       text-align: center;
+       padding: 0;
+       margin: 0 0 30px;
+
+       li {
+            display: inline-block;
+            color: $font-black;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid #111;
+            border-radius: 3px;
+            margin: 3px;
+            width: 95px;
+            cursor: pointer;
+
+            &:hover {
+                color: $body-color;
+                background-color: $font-black;
+            }
+        }
+
+        .selected-filter {
+            color: $body-color;
+            background-color: $font-black;
+        }
+    }
+}
 
 
 

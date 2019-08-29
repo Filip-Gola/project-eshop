@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shoeniverse - Sale</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="sale-page">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="brand logo" style="width: 25px;">
+                </a>
+                
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav mr-auto text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="women.html">Women</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="men.html">Men</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kids.html">Kids</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link sale" href="sale.html">Sale</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                    </ul>
+    
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+                <a href="cart.html" class="navbar-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge badge-warning" id="cartIcon"></span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="jumbotron jumbotron-fluid text-center">
+            <div class="container">
+                <h1 class="display-4">Sale</h1>
+                <p class="lead">Magnam maxime tenetur corporis!</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <ul class="filter">
+            <li id="btn-all" class="selected-filter">All</li>
+            <li id="btn-women">Women</li>
+            <li id="btn-men">Men</li>
+            <li id="btn-kids">Kids</li>
+        </ul>
+
+
+        <div class="container div-with-articles">
+            <div class="row justify-content-md-center">
+                <article class="card col-12 col-sm-6 col-md-3 women-article sale-article" data-id="3" >
+                    <img src="img/shoes/w_model3.jpg" class="card-img-top first-img" alt="NIKE W AF1 HI UT">
+                    <img src="img/shoes/w_model3.2.jpg" class="card-img-top second-img" alt="NIKE W AF1 HI UT">
+                    <div class="card-body">
+                        <h5 class="card-title">NIKE W AF1 HI UT</h5>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <div>
+                            <p class="price old-price">72,24 €</p>
+                            <p class="price sale-price">52,24 €</p>
+                        </div>
+                        <a href="product.html" class="btn btn-primary product-info">Details</a>
+                    </div>
+                </article>
+                <article class="card col-12 col-sm-6 col-md-3 men-article sale-article" data-id="6">
+                    <img src="img/shoes/m_model3.jpg" class="card-img-top first-img" alt="NIKE AIR FORCE 1 MID '07">
+                    <img src="img/shoes/m_model3.2.jpg" class="card-img-top second-img" alt="NIKE AIR FORCE 1 MID '07">
+                    <div class="card-body">
+                        <h5 class="card-title">NIKE AF 1 MID '07</h5>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <div>
+                            <p class="price old-price">93,49 €</p>
+                            <p class="price sale-price">80,99 €</p>
+                        </div>
+                        <a href="product.html" class="btn btn-primary product-info">Details</a>
+                    </div>
+                </article>
+                <article class="card col-12 col-sm-6 col-md-3 kids-article sale-article" data-id="8">
+                    <img src="img/shoes/k_model2.jpg" class="card-img-top first-img" alt="NIKE TANJUN (PSV)">
+                    <img src="img/shoes/k_model2.2.jpg" class="card-img-top second-img" alt="NIKE TANJUN (PSV)">
+                    <div class="card-body">
+                        <h5 class="card-title">NIKE TANJUN (PSV)</h5>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <div>
+                            <p class="price old-price">33,99 €</p>
+                            <p class="price sale-price">25,99 €</p>
+                        </div>
+                        <a href="product.html" class="btn btn-primary product-info">Details</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <footer class="container">
+        <div class="pre-footer row">
+            <div class="footer-menu col-12 col-lg-6 offset-lg-3 text-center">
+                <ul>
+                    <li>
+                        <a href="#">Shipping</a>
+                    </li>
+                    <li>
+                        <a href="#">Returns</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-social col-12 col-lg-3 text-center text-lg-right">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright row">
+            <p> &copy; 2019 Shoeniverse - All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
+
