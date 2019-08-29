@@ -409,7 +409,37 @@ body {
     }
 }
 
+// ABOUT US
 
+.about-us {
+    .gallery{
+        margin: 50px auto;
+
+        a {
+            text-align: center;
+            padding: 5px 10px;
+        }
+    }
+
+    #overlay {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+
+        img {
+            margin-top: 7%;
+            border: 5px solid $body-color;
+            border-radius: 5px;
+            max-width: 100%;
+            height: auto;
+        }
+
+    }
+}
 
 
 

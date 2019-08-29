@@ -235,4 +235,40 @@ $(document).ready(function () {
 		$(this).addClass("selected-filter");
 		$(this).siblings().removeClass("selected-filter");
 	});
+
+	// LIGHTBOX NA GALLERY V ABOUT US
+
+	let gallery = $('.gallery');
+
+	gallery.find("img").css({
+		opacity: 0.8
+	}).on("mouseenter mouseleave", function(event) {
+		if (event.type === "mouseenter") {
+			$(this).stop().fadeTo(200, 1);
+		} else {
+			$(this).stop().fadeTo(200, 0.8);
+		}
+	});
+
+	let overlay = $(`<div id="overlay"></div>`);
+	overlay.appendTo("body").hide();
+
+	gallery.find("a").on("click", function(event) {
+		let href = $(this).attr("href");
+		let image = $("<img>", {src: href, alt: "About Us Gallery"});
+
+		overlay.html(image).show();
+		event.preventDefault();
+	});
+
+	overlay.on("click", function() {
+		overlay.hide();
+	});
+
+	$(document).on("keyup", function() {
+		if (event.which === 27) {
+			overlay.hide();
+		}
+	});
+
 });

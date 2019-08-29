@@ -375,6 +375,33 @@ body #search-block #search-input-block #search-input {
   background-color: #111;
 }
 
+.about-us .gallery {
+  margin: 50px auto;
+}
+
+.about-us .gallery a {
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.about-us #overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.about-us #overlay img {
+  margin-top: 7%;
+  border: 5px solid #fafafa;
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
 @media only screen and (max-width: 500px) {
   .footer-menu li {
     display: block !important;
