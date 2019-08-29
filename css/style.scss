@@ -2,6 +2,10 @@ $body-color: #fafafa;
 $font-black: #111;
 $font-gray: #6c6e70;
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     background-color: $body-color;
     font-family: 'Montserrat', sans-serif;

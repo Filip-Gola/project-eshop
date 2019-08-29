@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-color: #fafafa;
   font-family: 'Montserrat', sans-serif;

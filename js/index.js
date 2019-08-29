@@ -25,7 +25,7 @@ $(document).ready(function () {
 		// 	displayTotalPrice();
 		// });
 	};
-});
+
 
 // funkciu delte musim dokoncit
 
@@ -85,12 +85,19 @@ function renderListOfProducts() {
 			product += `<td>Size: ${products[i].size}</td>`;
 			product += `<td>Quantity: <span class="prod-quantity">${products[i].quantity}</span></td>`;
 			product += `<td>Price: <span class="prod-price">${products[i].finalPrice}<span> €</td>`;
-			product += `<td class="delete-btn"><i class="fas fa-times"></i></td>`;
+			product += `<td class="delete-btn"><i class="fas fa-times" id="delete-btn"></i></td>`;
 
 			$('#table-of-products').append(product);
+			
+			// vymazanie produktu z tabuľky (nie zo storage-u)
+
+			// $("#delete-btn").on("click", function() {
+			// 	$(this).closest("tr").remove();
+			// });
 		}
 	}
 };
+
 
 function addItemToCart() {
 	class productItem {
@@ -180,3 +187,5 @@ function renderSizes(products) {
 	}
 	$('#size').append(product);
 };
+
+});
