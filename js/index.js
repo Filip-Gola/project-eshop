@@ -3,6 +3,7 @@
 $(document).ready(function () {
 
 	$('.product-info').click(getProductId);
+	cartCounter();
 
 	if (window.location.href.search('product.html') != -1) {
 		$.get("js/products.json", function (products) {
@@ -11,13 +12,17 @@ $(document).ready(function () {
 			renderProductInfo(products);
 			renderSizes(products);
 		});
-
-		$('.product-btn').click(addItemToCart);
+		cartCounter();
+		$('.product-btn').click(function(){
+			addItemToCart();
+			cartCounter();
+		});
 	};
 
 	if (window.location.href.search('cart.html') != -1) {
 		renderListOfProducts();
 		displayTotalPrice();
+		cartCounter();
 
 		$('.delete-btn').on('click', function(){
 			// Zisti id riadku
@@ -25,19 +30,32 @@ $(document).ready(function () {
 
 			$(this).closest('tr').remove();
 			deleteProductFromLS(rowID);
-
-	
+			cartCounter();
 		})
 	};
 
 	if(window.location.href.search('about.html') != -1){
 		galeryAboutUS();
+		cartCounter();
 	}
 
 	if(window.location.href.search('sale.html') != -1){
 		saleFilter();
+		cartCounter();
 	}
 });
+
+function cartCounter(){
+	let arrayOfProducts;
+	if(localStorage.getItem('products') === '[]'){
+		arrayOfProducts = [];
+		$('.fa-shopping-cart').text(``);
+	}else{
+		arrayOfProducts = JSON.parse(localStorage.getItem('products'));
+		let cartCount = arrayOfProducts.length;
+		$('.fa-shopping-cart').text(` (${cartCount})`);
+	}
+}
 
 	function deleteProductFromLS(idNum){
 		let productList = JSON.parse(localStorage.getItem('products'));
