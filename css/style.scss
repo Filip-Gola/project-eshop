@@ -294,9 +294,14 @@ body {
 
     form {
         margin: 50px 0;
-
+    
         .form-btn {
             margin: 30px 0;
+            
+            #buy-now-btn{
+                margin-right: 15px;
+                width: 135px;
+            }
 
             button {
                 margin-right: 15px;

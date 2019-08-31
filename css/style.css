@@ -275,6 +275,11 @@ body #search-block #search-input-block #search-input {
   margin: 30px 0;
 }
 
+.product-page form .form-btn #buy-now-btn {
+  margin-right: 15px;
+  width: 135px;
+}
+
 .product-page form .form-btn button {
   margin-right: 15px;
   width: 135px;
