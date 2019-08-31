@@ -15,39 +15,56 @@ $(document).ready(function () {
 		$('.product-btn').click(addItemToCart);
 	};
 
-
 	if (window.location.href.search('cart.html') != -1) {
 		renderListOfProducts();
 		displayTotalPrice();
 
-		// $('.delete-btn').click(function(){
-		// 	deleteProduct(target);
-		// 	displayTotalPrice();
-		// });
+		$('.delete-btn').on('click', function(){
+			// Zisti id riadku
+			let rowID = Number($(this).closest('tr').attr('row-id'));
+
+			$(this).closest('tr').remove();
+			deleteProductFromLS(rowID);
+
+	
+		})
 	};
 
+	if(window.location.href.search('about.html') != -1){
+		galeryAboutUS();
+	}
 
-	// funkciu delte musim dokoncit
+	if(window.location.href.search('sale.html') != -1){
+		saleFilter();
+	}
+});
 
-	// function deleteProduct(target){
-	// 	if(target.className === 'fas fa-times'){
-	// 		console.log('mam ta');
-
-	// 	}
-
-
-		// let element = $(event.target).parent().parent();
-		// console.log(`element: ${element}`);
-		// $('#table-of-products').remove(element);
+	function deleteProductFromLS(idNum){
+		let productList = JSON.parse(localStorage.getItem('products'));
 		
 		
-		// UI.prototype.deleteBook = function(target){
-		// 	if(target.className === 'delete') {
-		// 		target.parentElement.parentElement.remove();
-		// 	}
-		// }
-	// }
+		productList.splice(idNum, 1);
+		
 
+		localStorage.setItem('products', JSON.stringify(productList));
+		
+		displayTotalPrice();
+		refreshIDs();
+		
+	}
+
+	function refreshIDs(){
+		let listOfProducts = $('.prod-item');
+		for(let i = 0; i < listOfProducts.length; i++){
+			listOfProducts[i].setAttribute('row-id', i);
+		}
+		let rowNumber = $('.row-num');
+			for(let i = 0; i < rowNumber.length; i++){
+				rowNumber[i].textContent = i+1;
+			}
+		
+	}
+	
 	function displayTotalPrice() {
 		let products;
 
@@ -76,8 +93,8 @@ $(document).ready(function () {
 
 			for (let i = 0; i < products.length; i++) {
 				let product = '';
-				product += `<tr class="prod-item">`;
-				product += `<th scope="row">${i + 1}</th>`;
+				product += `<tr class="prod-item" row-id="${i}">`;
+				product += `<th class="row-num" scope="row">${i + 1}</th>`;
 				product += `<td>`;
 				product += `<img src="${products[i].imgUrl}" alt="${products[i].name}">`;
 				product += `</td>`;
@@ -85,15 +102,9 @@ $(document).ready(function () {
 				product += `<td>Size: ${products[i].size}</td>`;
 				product += `<td>Quantity: <span class="prod-quantity">${products[i].quantity}</span></td>`;
 				product += `<td>Price: <span class="prod-price">${products[i].finalPrice}<span> €</td>`;
-				product += `<td class="delete-btn"><i class="fas fa-times" id="delete-btn"></i></td>`;
+				product += `<td><i class="fas fa-times delete-btn"></i></td>`;
 
 				$('#table-of-products').append(product);
-				
-				// vymazanie produktu z tabuľky (nie zo storage-u)
-
-				// $("#delete-btn").on("click", function() {
-				// 	$(this).closest("tr").remove();
-				// });
 			}
 		}
 	};
@@ -126,7 +137,7 @@ $(document).ready(function () {
 
 		products.push(product);
 		localStorage.setItem('products', JSON.stringify(products));
-	}
+	};
 
 
 	// zisti product id
@@ -190,6 +201,8 @@ $(document).ready(function () {
 
 
 	// PRIDÁVANIE PRODUKTOV NA SALE STRANKU, neviem prečo nefunguje
+	// v loope si definujes (let PRDCT) ale potom volas napriklad <img src="${PRODUCT.url}"> ak namiesto PRODUCT das PRDCT 
+	// alebo naopak tak by to malo fungovat
 
 	// $.get("js/products.json", function(prdcts) {
 	// 	for (let prdct of prdcts) {
@@ -211,7 +224,8 @@ $(document).ready(function () {
 	// 	}
 	// });
 
-	// FILTER NA SALE
+	// FILTER NA SALE - zavola sa to hore.
+	function saleFilter(){
 	$("#btn-women").click(function() {
 		$(".sale-article").hide();
 		$(".women-article").show();
@@ -235,9 +249,11 @@ $(document).ready(function () {
 		$(this).addClass("selected-filter");
 		$(this).siblings().removeClass("selected-filter");
 	});
+}
 
 	// LIGHTBOX NA GALLERY V ABOUT US
-
+	function galeryAboutUS(){
+	
 	let gallery = $('.gallery');
 
 	gallery.find("img").css({
@@ -270,5 +286,4 @@ $(document).ready(function () {
 			overlay.hide();
 		}
 	});
-
-});
+}
