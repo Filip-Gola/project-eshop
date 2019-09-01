@@ -16,6 +16,7 @@ body {
 
         nav {
 
+
             a {
                 color: $font-black;
                 font-size: 20px;
@@ -54,6 +55,12 @@ body {
                 color: #e62424 !important;
             }
 
+            form {
+                button {
+                    padding: 5px 7px !important;
+                }
+            }
+
             .navbar-cart {
                 display: inline-block;
                 color: rgba(0,0,0,.5);
@@ -65,20 +72,18 @@ body {
                     text-decoration: none;
                 }
 
-                // počet produktov v košíku pri ikonke
-                
-                // .badge {
-                //     font-size: 12px;
-                //     background: $font-black;
-                //     color: $body-color;
-                //     padding: 3px;
-                //     vertical-align: top;
-                //     margin-left: -15px;
-                //     border-radius: 50%;
-                //     width: 20px;
-                //     height: 20px;
-                //     line-height: 17px;
-                // }
+                .badge {
+                    font-size: 12px;
+                    background: $font-black;
+                    color: $body-color;
+                    padding: 3px;
+                    vertical-align: top;
+                    margin-left: -15px;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 17px;
+                }
             }
         }
     }

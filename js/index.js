@@ -49,22 +49,22 @@ function cartCounter(){
 	let arrayOfProducts;
 	if(localStorage.getItem('products') === '[]'){
 		arrayOfProducts = [];
-		$('.fa-shopping-cart').text(``);
+		$('.badge').text(`0`);
 	}else{
 		arrayOfProducts = JSON.parse(localStorage.getItem('products'));
 		let cartCount = arrayOfProducts.length;
-		$('.fa-shopping-cart').text(` (${cartCount})`);
+		$('.badge').text(` ${cartCount}`);
 	}
 }
 
 	function deleteProductFromLS(idNum){
 		let productList = JSON.parse(localStorage.getItem('products'));
 		
-		
 		productList.splice(idNum, 1);
 		
-
 		localStorage.setItem('products', JSON.stringify(productList));
+
+		$('.badge').text(localStorage.length);
 		
 		displayTotalPrice();
 		refreshIDs();
@@ -99,8 +99,6 @@ function cartCounter(){
 		}
 	};
 
-
-
 	function renderListOfProducts() {
 		let products;
 
@@ -126,7 +124,6 @@ function cartCounter(){
 			}
 		}
 	};
-
 
 	function addItemToCart() {
 		class productItem {
@@ -155,8 +152,14 @@ function cartCounter(){
 
 		products.push(product);
 		localStorage.setItem('products', JSON.stringify(products));
-	};
 
+		toastr.options = {
+			"closeButton": true,
+			"positionClass": "toast-bottom-right",
+			"preventDuplicates": true,
+		  };
+		toastr["success"]("", "Item added to cart");
+	};
 
 	// zisti product id
 	function getProductId() {
@@ -243,7 +246,7 @@ function cartCounter(){
 	// });
 
 	// FILTER NA SALE - zavola sa to hore.
-	function saleFilter(){
+function saleFilter(){
 	$("#btn-women").click(function() {
 		$(".sale-article").hide();
 		$(".women-article").show();
@@ -270,7 +273,7 @@ function cartCounter(){
 }
 
 	// LIGHTBOX NA GALLERY V ABOUT US
-	function galeryAboutUS(){
+function galeryAboutUS(){
 	
 	let gallery = $('.gallery');
 

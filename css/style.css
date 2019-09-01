@@ -50,6 +50,10 @@ body header nav .sale {
   color: #e62424 !important;
 }
 
+body header nav form button {
+  padding: 5px 7px !important;
+}
+
 body header nav .navbar-cart {
   display: inline-block;
   color: rgba(0, 0, 0, 0.5);
@@ -60,6 +64,19 @@ body header nav .navbar-cart {
 body header nav .navbar-cart:hover {
   color: #111;
   text-decoration: none;
+}
+
+body header nav .navbar-cart .badge {
+  font-size: 12px;
+  background: #111;
+  color: #fafafa;
+  padding: 3px;
+  vertical-align: top;
+  margin-left: -15px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 17px;
 }
 
 body main {
