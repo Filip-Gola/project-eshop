@@ -51,7 +51,7 @@ body header nav .sale {
 }
 
 body header nav form button {
-  padding: 5px 7px !important;
+  padding: 5px 7px;
 }
 
 body header nav .navbar-cart {

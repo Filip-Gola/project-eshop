@@ -118,7 +118,7 @@ function cartCounter(){
 				product += `<td>Size: ${products[i].size}</td>`;
 				product += `<td>Quantity: <span class="prod-quantity">${products[i].quantity}</span></td>`;
 				product += `<td>Price: <span class="prod-price">${products[i].finalPrice}<span> €</td>`;
-				product += `<td><i class="fas fa-times delete-btn"></i></td>`;
+				product += `<td class="delete"><i class="fas fa-times delete-btn"></i></td>`;
 
 				$('#table-of-products').append(product);
 			}
