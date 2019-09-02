@@ -337,8 +337,19 @@ body {
 .cart-page {
     h1 {
         text-align: center;
+        margin-bottom: 85px;
+    }
+
+    .empty-img {
+        text-align: center;
+        margin-bottom: 55px;
+        display: none;
     }
     
+    #cart-table-with-products {
+        display: table;
+    }
+
     table {
         td, th {
             vertical-align: middle;
@@ -367,7 +378,13 @@ body {
             order: 2;
             
             i {
-                cursor: pointer;  
+                cursor: pointer;
+                font-size: 25px;
+                transition: transform;
+
+                &:hover {
+                    transform: scale(1.3);
+                }
             }
         }
         
