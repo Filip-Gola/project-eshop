@@ -47,178 +47,185 @@ $(document).ready(function () {
 
 function cartCounter(){
 	let arrayOfProducts;
-	if(localStorage.getItem('products') === '[]'){
+	// if(localStorage.getItem('products') === '[]'){
+	if (!localStorage.getItem('products')){
 		arrayOfProducts = [];
 		$('.badge').text(`0`);
-	}else{
+	} else {
 		arrayOfProducts = JSON.parse(localStorage.getItem('products'));
 		let cartCount = arrayOfProducts.length;
 		$('.badge').text(` ${cartCount}`);
 	}
 }
 
-	function deleteProductFromLS(idNum){
-		let productList = JSON.parse(localStorage.getItem('products'));
-		
-		productList.splice(idNum, 1);
-		
-		localStorage.setItem('products', JSON.stringify(productList));
-
-		$('.badge').text(localStorage.length);
-		
-		displayTotalPrice();
-		refreshIDs();
-		
-	}
-
-	function refreshIDs(){
-		let listOfProducts = $('.prod-item');
-		for(let i = 0; i < listOfProducts.length; i++){
-			listOfProducts[i].setAttribute('row-id', i);
-		}
-		let rowNumber = $('.row-num');
-			for(let i = 0; i < rowNumber.length; i++){
-				rowNumber[i].textContent = i+1;
-			}
-		
-	}
+function deleteProductFromLS(idNum){
+	let productList = JSON.parse(localStorage.getItem('products'));
 	
-	function displayTotalPrice() {
-		let products;
+	productList.splice(idNum, 1);
+	
+	localStorage.setItem('products', JSON.stringify(productList));
 
-		if (localStorage.getItem('products') === null) {
-			products = [];
-		} else {
-			products = JSON.parse(localStorage.getItem('products'));
-			let totalPrice = 0;
-			for (let i = 0; i < products.length; i++) {
-				totalPrice += Number(products[i].quantity) * Number(products[i].finalPrice);
-			}
+	$('.badge').text(localStorage.length);
+	
+	displayTotalPrice();
+	refreshIDs();
+	
+}
 
-			$('#sub-total').text(totalPrice.toFixed(2));
+function refreshIDs(){
+	let listOfProducts = $('.prod-item');
+	for(let i = 0; i < listOfProducts.length; i++){
+		listOfProducts[i].setAttribute('row-id', i);
+	}
+	let rowNumber = $('.row-num');
+		for(let i = 0; i < rowNumber.length; i++){
+			rowNumber[i].textContent = i+1;
 		}
-	};
+	
+}
 
-	function renderListOfProducts() {
-		let products;
+function displayTotalPrice() {
+	let products;
 
-		if (localStorage.getItem('products') === null) {
-			products = [];
-		} else {
-			products = JSON.parse(localStorage.getItem('products'));
-
-			for (let i = 0; i < products.length; i++) {
-				let product = '';
-				product += `<tr class="prod-item" row-id="${i}">`;
-				product += `<th class="row-num" scope="row">${i + 1}</th>`;
-				product += `<td>`;
-				product += `<img src="${products[i].imgUrl}" alt="${products[i].name}">`;
-				product += `</td>`;
-				product += `<td>${products[i].name}</td>`;
-				product += `<td>Size: ${products[i].size}</td>`;
-				product += `<td>Quantity: <span class="prod-quantity">${products[i].quantity}</span></td>`;
-				product += `<td>Price: <span class="prod-price">${products[i].finalPrice}<span> €</td>`;
-				product += `<td class="delete"><i class="fas fa-times delete-btn"></i></td>`;
-
-				$('#table-of-products').append(product);
-			}
-		}
-	};
-
-	function addItemToCart() {
-		class productItem {
-			constructor(name, finalPrice, size, quantity, imgUrl) {
-				this.name = name;
-				this.finalPrice = finalPrice;
-				this.size = size;
-				this.quantity = quantity;
-				this.imgUrl = imgUrl;
-			}
-		}
-		let products;
-		let prodName = $('.product-name').text();
-		let price = $('.product-price').text();
-		let shoeSize = $('#size').val();
-		let quantity = $('#quantity').val();
-		let imgUrl = $('.img-src').attr('src');
-
-		const product = new productItem(prodName, price, shoeSize, quantity, imgUrl);
-
-		if (localStorage.getItem('products') === null) {
-			products = [];
-		} else {
-			products = JSON.parse(localStorage.getItem('products'));
+	if (localStorage.getItem('products') === null) {
+		products = [];
+	} else {
+		products = JSON.parse(localStorage.getItem('products'));
+		let totalPrice = 0;
+		for (let i = 0; i < products.length; i++) {
+			totalPrice += Number(products[i].quantity) * Number(products[i].finalPrice);
 		}
 
-		products.push(product);
-		localStorage.setItem('products', JSON.stringify(products));
+		$('#sub-total').text(totalPrice.toFixed(2));
+	}
+};
 
-		toastr.options = {
-			"closeButton": true,
-			"positionClass": "toast-bottom-right",
-			"preventDuplicates": true,
-		  };
-		toastr["success"]("", "Item added to cart");
-	};
+function renderListOfProducts() {
+	let products;
 
-	// zisti product id
-	function getProductId() {
-		let productID = $(this).parent().parent().attr('data-id');
-		localStorage.setItem('product-id', productID);
-	};
+	if (localStorage.getItem('products') === null) {
+		products = [];
+	} else {
+		products = JSON.parse(localStorage.getItem('products'));
 
-	function renderProductImages(products) {
-		let productID = localStorage.getItem('product-id');
-		let product = '';
-		product += `<img src=${JSON.stringify(products[productID - 1].url[0])} alt=${JSON.stringify(products[productID - 1].name)} class="product-img" />`;
-		product += `<img src=${JSON.stringify(products[productID - 1].url[1])} alt=${JSON.stringify(products[productID - 1].name)} class="product-img" />`;
+		for (let i = 0; i < products.length; i++) {
+			let product = '';
+			product += `<tr class="prod-item row" row-id="${i}">`;
+			product += `<td class="col-3">`;
+			product += `<img src="${products[i].imgUrl}" alt="${products[i].name}" class="img-fluid">`;
+			product += `</td>`;
+			product += `<td class="col-6 product-info">`;
+			product += `<h4>${products[i].name}</h4>`;
+			product += `<h5>Size: ${products[i].size}</h5>`;
+			product += `<h5>Quantity: <span class="prod-quantity">${products[i].quantity}</span></h5>`;
+			product += `</td>`;
+			product += `<td class="col-12 col-lg-2 price-info">`;
+			product += `<h4><span class="prod-price">${products[i].finalPrice}<span> €</h4>`;
+			product += `</td>`;
+			product += `<td class="delete col-3 col-lg-1">`;
+			product += `<i class="fas fa-times"></i>`;
+			product += `</td>`;
+			product += `</tr>`;
 
-		$('.product-imgs').append(product);
-	};
-
-	function renderCarousel(products) {
-		let productID = localStorage.getItem('product-id');
-		let product = '';
-		product += `<div class="carousel-item active">`
-		product += `<img src=${JSON.stringify(products[productID - 1].url[0])} class="d-block w-100 img-src" alt="...">`
-		product += `</div>`;
-
-		product += `<div class="carousel-item">`
-		product += `<img src=${JSON.stringify(products[productID - 1].url[1])} class="d-block w-100" alt="...">`
-		product += `</div>`;
-
-
-		$('#carousel-item').append(product);
-	};
-
-	function renderProductInfo(products) {
-		let productID = localStorage.getItem('product-id');
-		let product = '';
-		let price;
-		//check ci je produkt v zlave
-		if (products[productID - 1].inSale === 'true') {
-			price = products[productID - 1].salePrice;
-		} else {
-			price = products[productID - 1].price;
+			$('#table-of-products').append(product);
 		}
+	}
+};
 
-		product += `<h1 class="product-name">${products[productID - 1].name.toUpperCase()}</h1>`;
-		product += `<p>${products[productID - 1].description}</p>`;
-		product += `<p>${products[productID - 1].description}</p>`;
-		product += `<p>${products[productID - 1].description}</p>`;
-		product += `<h2><span class="product-price">${price}</span>€</h2>`;
-
-		$('#product-info').prepend(product);
-	};
-
-	function renderSizes(products) {
-		let productID = localStorage.getItem('product-id');
-		let product = '';
-		for (let size of products[productID - 1].sizes) {
-			product += `<option value=${size}>${size}</option>`;
+function addItemToCart() {
+	class productItem {
+		constructor(name, finalPrice, size, quantity, imgUrl) {
+			this.name = name;
+			this.finalPrice = finalPrice;
+			this.size = size;
+			this.quantity = quantity;
+			this.imgUrl = imgUrl;
 		}
-		$('#size').append(product);
-	};
+	}
+	let products;
+	let prodName = $('.product-name').text();
+	let price = $('.product-price').text();
+	let shoeSize = $('#size').val();
+	let quantity = $('#quantity').val();
+	let imgUrl = $('.img-src').attr('src');
+
+	const product = new productItem(prodName, price, shoeSize, quantity, imgUrl);
+
+	if (localStorage.getItem('products') === null) {
+		products = [];
+	} else {
+		products = JSON.parse(localStorage.getItem('products'));
+	}
+
+	products.push(product);
+	localStorage.setItem('products', JSON.stringify(products));
+
+	toastr.options = {
+		"closeButton": true,
+		"positionClass": "toast-bottom-right",
+		"preventDuplicates": true,
+		};
+	toastr["success"]("", "Item added to cart");
+};
+
+// zisti product id
+function getProductId() {
+	let productID = $(this).parent().parent().attr('data-id');
+	localStorage.setItem('product-id', productID);
+};
+
+function renderProductImages(products) {
+	let productID = localStorage.getItem('product-id');
+	let product = '';
+	product += `<img src=${JSON.stringify(products[productID - 1].url[0])} alt=${JSON.stringify(products[productID - 1].name)} class="product-img" />`;
+	product += `<img src=${JSON.stringify(products[productID - 1].url[1])} alt=${JSON.stringify(products[productID - 1].name)} class="product-img" />`;
+
+	$('.product-imgs').append(product);
+};
+
+function renderCarousel(products) {
+	let productID = localStorage.getItem('product-id');
+	let product = '';
+	product += `<div class="carousel-item active">`
+	product += `<img src=${JSON.stringify(products[productID - 1].url[0])} class="d-block w-100 img-src" alt="...">`
+	product += `</div>`;
+
+	product += `<div class="carousel-item">`
+	product += `<img src=${JSON.stringify(products[productID - 1].url[1])} class="d-block w-100" alt="...">`
+	product += `</div>`;
+
+
+	$('#carousel-item').append(product);
+};
+
+function renderProductInfo(products) {
+	let productID = localStorage.getItem('product-id');
+	let product = '';
+	let price;
+	//check ci je produkt v zlave
+	if (products[productID - 1].inSale === 'true') {
+		price = products[productID - 1].salePrice;
+	} else {
+		price = products[productID - 1].price;
+	}
+
+	product += `<h1 class="product-name">${products[productID - 1].name.toUpperCase()}</h1>`;
+	product += `<p>${products[productID - 1].description}</p>`;
+	product += `<p>${products[productID - 1].description}</p>`;
+	product += `<p>${products[productID - 1].description}</p>`;
+	product += `<h2><span class="product-price">${price}</span>€</h2>`;
+
+	$('#product-info').prepend(product);
+};
+
+function renderSizes(products) {
+	let productID = localStorage.getItem('product-id');
+	let product = '';
+	for (let size of products[productID - 1].sizes) {
+		product += `<option value=${size}>${size}</option>`;
+	}
+	$('#size').append(product);
+};
 
 
 	// PRIDÁVANIE PRODUKTOV NA SALE STRANKU, neviem prečo nefunguje

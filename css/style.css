@@ -51,7 +51,7 @@ body header nav .sale {
 }
 
 body header nav form button {
-  padding: 5px 7px;
+  padding: 5px 7px !important;
 }
 
 body header nav .navbar-cart {
@@ -323,16 +323,27 @@ body #search-block #search-input-block #search-input {
   vertical-align: middle;
 }
 
-.cart-page table th {
-  width: 30px;
-}
-
 .cart-page table td {
   width: 120px;
 }
 
+.cart-page table .product-info h4 {
+  margin-bottom: 30px;
+}
+
+.cart-page table .product-info h5 {
+  margin-bottom: 15px;
+}
+
+.cart-page table .price-info {
+  white-space: nowrap;
+}
+
 .cart-page table .delete {
-  width: 30px;
+  text-align: right;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .cart-page table .delete i {
@@ -341,6 +352,7 @@ body #search-block #search-input-block #search-input {
 
 .cart-page table img {
   width: 100%;
+  margin: 0 10px;
 }
 
 .cart-page .checkout {
@@ -447,6 +459,14 @@ body #search-block #search-input-block #search-input {
   .navbar-collapse .form-inline {
     display: inline-block;
     margin: 0 auto;
+  }
+  .cart-page .price-info {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    text-align: right;
+    border: none;
+    margin-bottom: 10px;
   }
 }
 
