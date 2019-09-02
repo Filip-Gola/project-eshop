@@ -123,7 +123,7 @@ function renderListOfProducts() {
 			product += `<h4><span class="prod-price">${products[i].finalPrice}<span> €</h4>`;
 			product += `</td>`;
 			product += `<td class="delete col-3 col-lg-1">`;
-			product += `<i class="fas fa-times"></i>`;
+			product += `<i class="fas fa-times delete-btn"></i>`;
 			product += `</td>`;
 			product += `</tr>`;
 
@@ -164,6 +164,7 @@ function addItemToCart() {
 		"closeButton": true,
 		"positionClass": "toast-bottom-right",
 		"preventDuplicates": true,
+		"timeOut": "2500"
 		};
 	toastr["success"]("", "Item added to cart");
 };
