@@ -49,7 +49,6 @@ $(document).ready(function () {
 
 function cartCounter(){
 	let arrayOfProducts;
-	// if(localStorage.getItem('products') === '[]'){
 	if (!localStorage.getItem('products')){
 		arrayOfProducts = [];
 		$('.badge').text(`0`);
@@ -230,30 +229,6 @@ function renderSizes(products) {
 	$('#size').append(product);
 };
 
-
-	// PRIDÁVANIE PRODUKTOV NA SALE STRANKU, neviem prečo nefunguje
-	// v loope si definujes (let PRDCT) ale potom volas napriklad <img src="${PRODUCT.url}"> ak namiesto PRODUCT das PRDCT 
-	// alebo naopak tak by to malo fungovat
-
-	// $.get("js/products.json", function(prdcts) {
-	// 	for (let prdct of prdcts) {
-	// 		let productInfo = "";
-	// 		productInfo +=  `<article class="card col-12 col-sm-6 col-md-3" data-id="1">`;
-	// 		productInfo += `<img src="${product.url}" class="card-img-top first-img" alt="NIKE W AIR MAX 270">`;
-	// 		productInfo += `<div class="card-body">`;
-	// 		productInfo += `<h5 class="card-title">${product.name}`;
-	// 		productInfo += `<p class="card-text">${product.description}</p>`;
-	// 		productInfo += `<div>`;
-	// 		productInfo += `<p class="price">${product.price} €</p>`;
-	// 		productInfo += `<p class="price sale-price">${product.inSale} €</p>`;
-	// 		productInfo += `</div>`;
-	// 		productInfo += `<a href="product.html" class="btn btn-primary product-info">Details</a>`;
-	// 		productInfo += `</div>`;
-	// 		productInfo += `</article>`;
-
-	// 		$("#list-of-items").append(productInfo);
-	// 	}
-	// });
 
 	// FILTER NA SALE - zavola sa to hore.
 function saleFilter(){
