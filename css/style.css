@@ -5,6 +5,7 @@ html {
 body {
   background-color: #fafafa;
   font-family: 'Montserrat', sans-serif;
+  padding-top: 64px;
 }
 
 body header .carousel {
