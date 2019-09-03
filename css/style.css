@@ -11,6 +11,10 @@ body header .carousel {
   margin-bottom: 40px;
 }
 
+body header nav {
+  border-bottom: 1px solid #6c6e70;
+}
+
 body header nav a {
   color: #111;
   font-size: 20px;
@@ -482,6 +486,10 @@ body #search-block #search-input-block #search-input {
 }
 
 .about-us .map {
+  margin-top: 30px;
+}
+
+.faq-page h4 {
   margin-top: 30px;
 }
 

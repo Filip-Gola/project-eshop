@@ -15,7 +15,7 @@ body {
         }
 
         nav {
-
+            border-bottom: 1px solid $font-gray;
 
             a {
                 color: $font-black;
@@ -514,7 +514,13 @@ body {
     }
 }
 
+// FAQ page
 
+.faq-page {
+    h4 {
+        margin-top: 30px;
+    }
+}
 
 @media only screen and (max-width: 500px) {
     .footer-menu li {
