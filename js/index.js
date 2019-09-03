@@ -14,7 +14,7 @@ $(document).ready(function () {
 			renderSizes(products);
 		});
 		cartCounter();
-		$('.product-btn').click(function(){
+		$('.product-btn').click(function () {
 			addItemToCart();
 			cartCounter();
 		});
@@ -25,7 +25,7 @@ $(document).ready(function () {
 		displayTotalPrice();
 		cartCounter();
 
-		$('.delete-btn').on('click', function(){
+		$('.delete-btn').on('click', function () {
 			// Zisti id riadku
 			let rowID = Number($(this).closest('tr').attr('row-id'));
 
@@ -36,20 +36,26 @@ $(document).ready(function () {
 		});
 	};
 
-	if(window.location.href.search('about.html') != -1){
+	if(window.location.href.search('checkout.html') != -1){
+		renderCheckoutProducts();
+		displayTotalPrice();
+		calcTotalPriceAndShipping();
+	}
+
+	if (window.location.href.search('about.html') != -1) {
 		galeryAboutUS();
 		cartCounter();
 	}
 
-	if(window.location.href.search('sale.html') != -1){
+	if (window.location.href.search('sale.html') != -1) {
 		saleFilter();
 		cartCounter();
 	}
 });
 
-function cartCounter(){
+function cartCounter() {
 	let arrayOfProducts;
-	if (!localStorage.getItem('products')){
+	if (!localStorage.getItem('products')) {
 		arrayOfProducts = [];
 		$('.badge').text(`0`);
 	} else {
@@ -59,30 +65,30 @@ function cartCounter(){
 	}
 }
 
-function deleteProductFromLS(idNum){
+function deleteProductFromLS(idNum) {
 	let productList = JSON.parse(localStorage.getItem('products'));
-	
+
 	productList.splice(idNum, 1);
-	
+
 	localStorage.setItem('products', JSON.stringify(productList));
 
 	$('.badge').text(localStorage.length);
-	
+
 	displayTotalPrice();
 	refreshIDs();
-	
+
 }
 
-function refreshIDs(){
+function refreshIDs() {
 	let listOfProducts = $('.prod-item');
-	for(let i = 0; i < listOfProducts.length; i++){
+	for (let i = 0; i < listOfProducts.length; i++) {
 		listOfProducts[i].setAttribute('row-id', i);
 	}
 	let rowNumber = $('.row-num');
-		for(let i = 0; i < rowNumber.length; i++){
-			rowNumber[i].textContent = i+1;
-		}
-	
+	for (let i = 0; i < rowNumber.length; i++) {
+		rowNumber[i].textContent = i + 1;
+	}
+
 }
 
 function displayTotalPrice() {
@@ -132,6 +138,41 @@ function renderListOfProducts() {
 		}
 	}
 };
+function renderCheckoutProducts(){
+	let products;
+
+	if (localStorage.getItem('products') === null) {
+		products = [];
+	} else {
+		products = JSON.parse(localStorage.getItem('products'));
+
+		for (let i = 0; i < products.length; i++) {
+			let product = '';
+			product += `<tr class="prod-item row" row-id="${i}">`;
+			product += `<td class="col-3">`;
+			product += `<img src="${products[i].imgUrl}" alt="${products[i].name}" class="img-fluid">`;
+			product += `</td>`;
+			product += `<td class="col-6 product-info">`;
+			product += `<h4>${products[i].name}</h4>`;
+			product += `<h5>Size: ${products[i].size}</h5>`;
+			product += `<h5>Quantity: <span class="prod-quantity">${products[i].quantity}</span></h5>`;
+			product += `</td>`;
+			product += `<td class="col-12 col-lg-2 price-info">`;
+			product += `<h4><span class="prod-price">${products[i].finalPrice}<span> €</h4>`;
+			product += `</tr>`;
+
+			$('#table-of-products').append(product);
+		}
+	}
+}
+
+function calcTotalPriceAndShipping(){
+	let subTotal = Number($('#sub-total').text());
+	let shippingPrice = 5.50;
+	let finalPrice = subTotal + shippingPrice;
+
+	$('#final-price').text(finalPrice.toFixed(2));
+}
 
 function addItemToCart() {
 	class productItem {
@@ -166,7 +207,7 @@ function addItemToCart() {
 		"positionClass": "toast-bottom-right",
 		"preventDuplicates": true,
 		"timeOut": "2500"
-		};
+	};
 	toastr["success"]("", "Item added to cart");
 };
 
@@ -230,41 +271,41 @@ function renderSizes(products) {
 };
 
 
-	// FILTER NA SALE - zavola sa to hore.
-function saleFilter(){
-	$("#btn-women").click(function() {
+// FILTER NA SALE - zavola sa to hore.
+function saleFilter() {
+	$("#btn-women").click(function () {
 		$(".sale-article").hide();
 		$(".women-article").show();
 		$(this).addClass("selected-filter");
 		$(this).siblings().removeClass("selected-filter");
 	});
-	$("#btn-men").click(function() {
+	$("#btn-men").click(function () {
 		$(".sale-article").hide();
 		$(".men-article").show();
 		$(this).addClass("selected-filter");
 		$(this).siblings().removeClass("selected-filter");
 	});
-	$("#btn-kids").click(function() {
+	$("#btn-kids").click(function () {
 		$(".sale-article").hide();
 		$(".kids-article").show();
 		$(this).addClass("selected-filter");
 		$(this).siblings().removeClass("selected-filter");
 	});
-	$("#btn-all").click(function() {
+	$("#btn-all").click(function () {
 		$(".sale-article").show();
 		$(this).addClass("selected-filter");
 		$(this).siblings().removeClass("selected-filter");
 	});
 }
 
-	// LIGHTBOX NA GALLERY V ABOUT US
-function galeryAboutUS(){
-	
+// LIGHTBOX NA GALLERY V ABOUT US
+function galeryAboutUS() {
+
 	let gallery = $('.gallery');
 
 	gallery.find("img").css({
 		opacity: 0.8
-	}).on("mouseenter mouseleave", function(event) {
+	}).on("mouseenter mouseleave", function (event) {
 		if (event.type === "mouseenter") {
 			$(this).stop().fadeTo(200, 1);
 		} else {
@@ -275,19 +316,19 @@ function galeryAboutUS(){
 	let overlay = $(`<div id="overlay"></div>`);
 	overlay.appendTo("body").hide();
 
-	gallery.find("a").on("click", function(event) {
+	gallery.find("a").on("click", function (event) {
 		let href = $(this).attr("href");
-		let image = $("<img>", {src: href, alt: "About Us Gallery"});
+		let image = $("<img>", { src: href, alt: "About Us Gallery" });
 
 		overlay.html(image).show();
 		event.preventDefault();
 	});
 
-	overlay.on("click", function() {
+	overlay.on("click", function () {
 		overlay.hide();
 	});
 
-	$(document).on("keyup", function() {
+	$(document).on("keyup", function () {
 		if (event.which === 27) {
 			overlay.hide();
 		}

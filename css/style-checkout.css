@@ -1,0 +1,55 @@
+#group-1{
+  background-color: white;
+}
+#group-2{
+  border-left: 1px solid lightgrey;
+  background-color: #f9f9f9;
+}
+.dynamic-checkout{
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  position: relative;
+  padding: 30px;
+  margin-top: 25px;
+  text-align: center;
+}
+.dynamic-checkout h2{
+  position: absolute;
+  top: -15px;
+  left: 36%;
+  z-index: 50;
+  background-color: white;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+.dynamic-checkout-btns button{
+  width: 49%;
+}
+.form-control{
+  margin: 10px 0;
+}
+.main-header h1{
+  text-align: center; 
+}
+.btn{
+  padding: 15px;
+}
+#cont-shipping-btn{
+  float: right;
+}
+.form-group{
+  padding-top: 20px;
+}
+.checkout-section{
+  border-top: 1px solid lightgrey;
+  font-size: 20px;
+  padding: 15px 0;
+}
+.checkout-section #final-price{
+  font-weight: bold;
+}
+.checkout-section .right{
+  text-align: right;
+}
+
