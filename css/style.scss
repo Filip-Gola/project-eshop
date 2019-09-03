@@ -478,7 +478,39 @@ body {
             max-width: 100%;
             height: auto;
         }
+    }
 
+    .contact-section {
+        div {
+            margin-bottom: 20px;
+        }
+
+        .customer-service {
+    
+            i {
+                display: block;
+                font-size: 20px;
+                color: $font-black;
+            }
+    
+            a {
+                color: $font-black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    
+        h3 {
+            margin-bottom: 30px;;
+        }
+    }
+
+    .contact-heading {
+        margin: 85px 0 40px;
+    }
+
+    .map {
+        margin-top: 30px;;
     }
 }
 
@@ -538,6 +570,12 @@ body {
 
         .form-btn {
             margin: 30px auto!important;
+        }
+    }
+
+    .about-us {
+        .contact-img {
+            order: 2;
         }
     }
 }

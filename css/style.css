@@ -457,6 +457,34 @@ body #search-block #search-input-block #search-input {
   height: auto;
 }
 
+.about-us .contact-section div {
+  margin-bottom: 20px;
+}
+
+.about-us .contact-section .customer-service i {
+  display: block;
+  font-size: 20px;
+  color: #111;
+}
+
+.about-us .contact-section .customer-service a {
+  color: #111;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.about-us .contact-section h3 {
+  margin-bottom: 30px;
+}
+
+.about-us .contact-heading {
+  margin: 85px 0 40px;
+}
+
+.about-us .map {
+  margin-top: 30px;
+}
+
 @media only screen and (max-width: 500px) {
   .footer-menu li {
     display: block !important;
@@ -505,6 +533,11 @@ body #search-block #search-input-block #search-input {
   }
   .product-page .form-btn {
     margin: 30px auto !important;
+  }
+  .about-us .contact-img {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 
