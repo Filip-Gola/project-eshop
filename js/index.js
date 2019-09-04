@@ -27,7 +27,6 @@ $(document).ready(function () {
 		emptyCartToastr();
 
 		$('.delete-btn').on('click', function(){
-			// Zisti id riadku
 			let rowID = Number($(this).closest('tr').attr('row-id'));
 
 			$(this).closest('tr').remove();
@@ -76,7 +75,6 @@ function deleteProductFromLS(idNum){
 	
 	displayTotalPrice();
 	refreshIDs();
-	
 }
 
 function refreshIDs(){
@@ -87,8 +85,7 @@ function refreshIDs(){
 	let rowNumber = $('.row-num');
 		for(let i = 0; i < rowNumber.length; i++){
 			rowNumber[i].textContent = i+1;
-		}
-	
+		}	
 }
 
 function displayTotalPrice() {
@@ -102,7 +99,6 @@ function displayTotalPrice() {
 		for (let i = 0; i < products.length; i++) {
 			totalPrice += Number(products[i].quantity) * Number(products[i].finalPrice);
 		}
-
 		$('#sub-total').text(totalPrice.toFixed(2));
 	}
 };
@@ -182,7 +178,6 @@ function addItemToCart() {
 	toastr["success"]("", "Item Added To Cart");
 };
 
-// zisti product id
 function getProductId() {
 	let productID = $(this).parent().parent().attr('data-id');
 	localStorage.setItem('product-id', productID);
@@ -208,7 +203,6 @@ function renderCarousel(products) {
 	product += `<img src=${JSON.stringify(products[productID - 1].url[1])} class="d-block w-100" alt="...">`
 	product += `</div>`;
 
-
 	$('#carousel-item').append(product);
 };
 
@@ -216,13 +210,12 @@ function renderProductInfo(products) {
 	let productID = localStorage.getItem('product-id');
 	let product = '';
 	let price;
-	//check ci je produkt v zlave
+	
 	if (products[productID - 1].inSale === 'true') {
 		price = products[productID - 1].salePrice;
 	} else {
 		price = products[productID - 1].price;
 	}
-
 	product += `<h1 class="product-name">${products[productID - 1].name.toUpperCase()}</h1>`;
 	product += `<p>${products[productID - 1].description}</p>`;
 	product += `<p>${products[productID - 1].description}</p>`;
@@ -241,7 +234,6 @@ function renderSizes(products) {
 	$('#size').append(product);
 };
 
-	// FILTER NA SALE - zavola sa to hore.
 function saleFilter(){
 	$("#btn-women").click(function() {
 		$(".sale-article").hide();
@@ -268,9 +260,7 @@ function saleFilter(){
 	});
 }
 
-	// LIGHTBOX NA GALLERY V ABOUT US
-function galeryAboutUS(){
-	
+function galeryAboutUS(){	
 	let gallery = $('.gallery');
 
 	gallery.find("img").css({

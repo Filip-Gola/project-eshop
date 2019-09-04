@@ -5,10 +5,11 @@ $background-grey: #f9f9f9;
 .checkout-page {
     padding-top: 50px;
     
+    h1 {
+        text-align: center;
+    }
+    
     #group-1 {
-        h1 {
-            text-align: center;
-        }
 
         .dynamic-checkout{
             border: 1px solid lightgrey;
