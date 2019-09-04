@@ -179,7 +179,7 @@ function addItemToCart() {
 		"preventDuplicates": true,
 		"timeOut": "2500"
 		};
-	toastr["success"]("", "Item added to cart");
+	toastr["success"]("", "Item Added To Cart");
 };
 
 // zisti product id
