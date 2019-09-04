@@ -55,7 +55,6 @@ $(document).ready(function () {
 
 function cartCounter(){
 	let arrayOfProducts;
-	// if(localStorage.getItem('products') === '[]'){
 	if (!localStorage.getItem('products')){
 		arrayOfProducts = [];
 		$('.badge').text(`0`);
