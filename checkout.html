@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/checkout.css">
+</head>
+
+<body class="checkout-page">
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7" id="group-1">
+					<h1>Shoeniverse</h1>
+
+					<div class="dynamic-checkout">
+						<h2>Express checkout</h2>
+						<div class="dynamic-checkout-btns">
+							<button type="button" class="btn btn-warning paypal"></button>
+							<button type="button" class="btn btn-dark googlepay"></button>
+						</div>
+					</div>
+
+					<form>
+						<div class="form-group">
+							<label for="email">Contact Information</label>
+							<input type="email" class="form-control" id="email" placeholder="Email" required>
+
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="checkbox" checked>
+								<label class="form-check-label" for="checkbox">Keep me up to date on news and
+									exclusive offers</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label>Shipping address</label>
+							<div class="form-row">
+								<div class="col-12 col-md-6">
+									<input type="text" name="first-name" id="first-name"
+										placeholder="First Name" class="form-control" required>
+								</div>
+								<div class="col-12 col-md-6">
+									<input type="text" name="last-name" id="last-name" placeholder="Last Name"
+										class="form-control" required>
+								</div>
+							</div>
+
+							<input type="text" name="company" id="company" placeholder="Company (optional)"
+								class="form-control">
+							<input type="text" name="address" id="address" placeholder="Address"
+								class="form-control" required>
+							<input type="text" name="appartment" id="appartment"
+								placeholder="Appartment, suite, etc. (optional)" class="form-control">
+							<input type="text" name="city" id="city" placeholder="City" class="form-control" required>
+							
+							<div class="form-row">
+								<div class="col">
+									<input type="text" name="country" id="country" placeholder="Country/Region" class="form-control" required>
+								</div>
+
+								<div class="col">
+									<input type="number" name="postal-code" id="postal-code"
+										placeholder="Postal Code" class="form-control" required>
+								</div>
+							</div>
+
+							<input type="number" name="phone" id="phone" placeholder="Phone"
+								class="form-control" required>
+							
+							<a class="btn" href="cart.html">
+								<i class="fas fa-angle-left"></i>
+								Return to Cart
+							</a>
+
+							<button type="submit" class="btn btn-danger" id="cont-shipping-btn">
+								Continue Shipping
+							</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="col-lg-5" id="group-2">
+					<div class="checkout-section">
+						<div class="row">
+							<div class="col-6">Subtotal</div>
+							<div class="col-6 right"><span id="sub-total"></span> €</div>
+						</div>
+						<div class="row">
+							<div class="col-6">Shipping</div>
+							<div class="col-6 right">5.50 €</div>
+						</div>
+					</div>
+					<div class="checkout-section">
+						<div class="row">
+							<div class="col-6">Total</div>
+							<div class="col-6 right"><span id="final-price"></span> €</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<!-- pridal som plnu verziu Jquery pre funkcie ako fadeIn a fadeOut -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

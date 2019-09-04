@@ -1,6 +1,6 @@
 $body-color: #fafafa;
 $font-black: #111;
-$font-gray: #6c6e70;
+$font-grey: #6c6e70;
 
 html {
     overflow-y: scroll;
@@ -16,8 +16,8 @@ body {
         }
 
         nav {
-            border-bottom: 1px solid $font-gray;
-
+            border-bottom: 1px solid $font-grey;
+            
             a {
                 color: $font-black;
                 font-size: 20px;
@@ -195,7 +195,7 @@ body {
 
         .copyright {
             p {
-                color: $font-gray;
+                color: $font-grey;
                 margin: 15px auto 20px;
             }
         }
@@ -262,9 +262,9 @@ body {
             display: inline-block;
             color: #e62424;
         }
-        //  Class, kt. sa pridá na normálnu cenu ak je zľava
+        
         .old-price {
-            color: $font-gray;
+            color: $font-grey;
             text-decoration: line-through;
         }
     
@@ -289,7 +289,7 @@ body {
         display: none;
 
         .carousel-indicators li {
-            background-color: $font-gray;
+            background-color: $font-grey;
         }
     }
 

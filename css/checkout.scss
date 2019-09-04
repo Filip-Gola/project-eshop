@@ -1,0 +1,113 @@
+$font-black: #111;
+$font-grey: #6c6e70;
+$background-grey: #f9f9f9;
+
+.checkout-page {
+    padding-top: 50px;
+    
+    #group-1 {
+        h1 {
+            text-align: center;
+        }
+
+        .dynamic-checkout{
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            position: relative;
+            padding: 30px;
+            margin-top: 25px;
+            text-align: center;
+
+            h2 {
+                width: 176px;
+                position: absolute;
+                top: -15px;
+                left: 0;
+                right: 0;
+                z-index: 50;
+                background-color: white;
+                font-size: 20px;
+                padding: 0 10px;
+                margin: 0 auto;
+                // na left si mal nejakú hodnotu aby bol text v strede, no pri menších zariadeniach už v strede nebol práve kvoli tomuto odsadeniu, zacentrovanie absolute elementu je trošku horšie, dala som left a right = 0, tým sa to správalo ako block element na celú šírku so zacentrovaním vlavo, a s width som určila šírku ktorá vyhovovala aj pre menšie zariadenia, potom už len klasika margin 0 auto :)
+            }
+
+            .dynamic-checkout-btns {
+
+                .paypal, .googlepay {
+                    width: 49%;
+                    height: 55px;
+                }
+
+                .paypal {
+                    background: #ffc439 url(../img/paypal.png) no-repeat 50% 50%;
+                    background-size: 85px;
+
+                    &:hover {
+                        background: darken(#ffc439, 15%) url(../img/paypal.png) no-repeat 50% 50%;
+                        background-size: 85px;
+                    }
+                }
+
+                .googlepay {
+                    background: #343a40 url(../img/googlepay.png) no-repeat 50% 50%;
+                    background-size: 70px;
+
+                    &:hover {
+                        background: darken(#343a40, 15%) url(../img/googlepay.png) no-repeat 50% 50%;
+                        background-size: 70px;
+                    }
+                }
+            }
+        }
+
+        form {
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button { 
+                -webkit-appearance: none; 
+                margin: 0; 
+            }
+
+            .form-control{ 
+                margin: 10px 0;
+            }
+
+            .form-group {
+                padding-top: 20px;
+
+                .btn {
+                    padding: 10px 15px;
+                }
+
+                a {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                #cont-shipping-btn {
+                    float: right;
+                }
+            }
+        }
+    }
+
+    #group-2 {
+      border-left: 1px solid lightgrey;
+      background-color: $background-grey;
+
+        .checkout-section {
+            border-bottom: 1px solid lightgrey;
+            font-size: 20px;
+            padding: 15px 0;
+
+            .right {
+                text-align: right;
+            }
+
+            #final-price {
+                font-weight: bold;
+            }
+        }
+    }
+}

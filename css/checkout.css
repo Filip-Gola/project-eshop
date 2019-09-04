@@ -1,0 +1,100 @@
+.checkout-page {
+  padding-top: 50px;
+}
+
+.checkout-page #group-1 h1 {
+  text-align: center;
+}
+
+.checkout-page #group-1 .dynamic-checkout {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  position: relative;
+  padding: 30px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.checkout-page #group-1 .dynamic-checkout h2 {
+  width: 176px;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: white;
+  font-size: 20px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.checkout-page #group-1 .dynamic-checkout .dynamic-checkout-btns .paypal, .checkout-page #group-1 .dynamic-checkout .dynamic-checkout-btns .googlepay {
+  width: 49%;
+  height: 55px;
+}
+
+.checkout-page #group-1 .dynamic-checkout .dynamic-checkout-btns .paypal {
+  background: #ffc439 url(../img/paypal.png) no-repeat 50% 50%;
+  background-size: 85px;
+}
+
+.checkout-page #group-1 .dynamic-checkout .dynamic-checkout-btns .paypal:hover {
+  background: #eca500 url(../img/paypal.png) no-repeat 50% 50%;
+  background-size: 85px;
+}
+
+.checkout-page #group-1 .dynamic-checkout .dynamic-checkout-btns .googlepay {
+  background: #343a40 url(../img/googlepay.png) no-repeat 50% 50%;
+  background-size: 70px;
+}
+
+.checkout-page #group-1 .dynamic-checkout .dynamic-checkout-btns .googlepay:hover {
+  background: #121416 url(../img/googlepay.png) no-repeat 50% 50%;
+  background-size: 70px;
+}
+
+.checkout-page #group-1 form input[type=number]::-webkit-inner-spin-button,
+.checkout-page #group-1 form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.checkout-page #group-1 form .form-control {
+  margin: 10px 0;
+}
+
+.checkout-page #group-1 form .form-group {
+  padding-top: 20px;
+}
+
+.checkout-page #group-1 form .form-group .btn {
+  padding: 10px 15px;
+}
+
+.checkout-page #group-1 form .form-group a:hover {
+  text-decoration: underline;
+}
+
+.checkout-page #group-1 form .form-group #cont-shipping-btn {
+  float: right;
+}
+
+.checkout-page #group-2 {
+  border-left: 1px solid lightgrey;
+  background-color: #f9f9f9;
+}
+
+.checkout-page #group-2 .checkout-section {
+  border-bottom: 1px solid lightgrey;
+  font-size: 20px;
+  padding: 15px 0;
+}
+
+.checkout-page #group-2 .checkout-section .right {
+  text-align: right;
+}
+
+.checkout-page #group-2 .checkout-section #final-price {
+  font-weight: bold;
+}
+/*# sourceMappingURL=checkout.css.map */

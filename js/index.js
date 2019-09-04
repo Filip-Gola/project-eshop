@@ -24,6 +24,7 @@ $(document).ready(function () {
 		renderListOfProducts();
 		displayTotalPrice();
 		cartCounter();
+		emptyCartToastr();
 
 		$('.delete-btn').on('click', function(){
 			// Zisti id riadku
@@ -39,11 +40,16 @@ $(document).ready(function () {
 	if(window.location.href.search('about.html') != -1){
 		galeryAboutUS();
 		cartCounter();
-	}
+	};
 
 	if(window.location.href.search('sale.html') != -1){
 		saleFilter();
 		cartCounter();
+	};
+
+	if(window.location.href.search("checkout.html") != -1){
+		displayTotalPrice();
+		displayFinalPrice();
 	}
 });
 
@@ -101,6 +107,12 @@ function displayTotalPrice() {
 		$('#sub-total').text(totalPrice.toFixed(2));
 	}
 };
+
+function displayFinalPrice() {
+	let subtotal = Number($("#sub-total").text());
+	let finalprice = subtotal + 5.50;
+	$("#final-price").text(finalprice.toFixed(2));
+}
 
 function renderListOfProducts() {
 	let products;
@@ -230,31 +242,6 @@ function renderSizes(products) {
 	$('#size').append(product);
 };
 
-
-	// PRIDÁVANIE PRODUKTOV NA SALE STRANKU, neviem prečo nefunguje
-	// v loope si definujes (let PRDCT) ale potom volas napriklad <img src="${PRODUCT.url}"> ak namiesto PRODUCT das PRDCT 
-	// alebo naopak tak by to malo fungovat
-
-	// $.get("js/products.json", function(prdcts) {
-	// 	for (let prdct of prdcts) {
-	// 		let productInfo = "";
-	// 		productInfo +=  `<article class="card col-12 col-sm-6 col-md-3" data-id="1">`;
-	// 		productInfo += `<img src="${product.url}" class="card-img-top first-img" alt="NIKE W AIR MAX 270">`;
-	// 		productInfo += `<div class="card-body">`;
-	// 		productInfo += `<h5 class="card-title">${product.name}`;
-	// 		productInfo += `<p class="card-text">${product.description}</p>`;
-	// 		productInfo += `<div>`;
-	// 		productInfo += `<p class="price">${product.price} €</p>`;
-	// 		productInfo += `<p class="price sale-price">${product.inSale} €</p>`;
-	// 		productInfo += `</div>`;
-	// 		productInfo += `<a href="product.html" class="btn btn-primary product-info">Details</a>`;
-	// 		productInfo += `</div>`;
-	// 		productInfo += `</article>`;
-
-	// 		$("#list-of-items").append(productInfo);
-	// 	}
-	// });
-
 	// FILTER NA SALE - zavola sa to hore.
 function saleFilter(){
 	$("#btn-women").click(function() {
@@ -325,4 +312,20 @@ function displayEmptyCart() {
 		$(".empty-img").css("display", "block");
 		$("#cart-table-with-products").css("display", "none");
 	}
+}
+
+function emptyCartToastr() {
+	$("#checkout-btn").on("click", function(event) {
+		let subtotal = Number($("#sub-total").text());
+		if (subtotal === 0) {
+			event.preventDefault();
+			toastr.options = {
+				"closeButton": true,
+				"positionClass": "toast-bottom-right",
+				"preventDuplicates": true,
+				"timeOut": "2500"
+				};
+			toastr["error"]("", "Your Cart Is Empty!");
+		}
+	});
 }

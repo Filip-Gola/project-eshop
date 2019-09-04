@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="cart-page">
@@ -65,24 +66,7 @@
                 <img src="img/empty-cart.png" alt="empty cart" class="img-fluid">
             </div>
             <table class="table col-12 col-lg-8" id="cart-table-with-products">
-                <tbody id="table-of-products" class="container">
-                    <!-- <tr class="row">
-                        <td class="col-4">
-                            <img src="img/shoes/w_model1.jpg" alt="" class="img-fluid">
-                        </td>
-                        <td class="col-5 product-info">
-                            <h4>NIKE W AIR MAX 270</h4>
-                            <h5>Size: <span>36</span></h5>
-                            <h5>Quantity: <span>1</span></h5>
-                        </td>
-                        <td class="col-12 col-lg-2 price-info">
-                            <h4><span>131,74</span> €</h4> 
-                        </td>
-                        <td class="delete col-3 col-lg-1">
-                            <i class="fas fa-times"></i>
-                        </td>
-                    </tr>  -->
-                </tbody>
+                <tbody id="table-of-products" class="container"></tbody>
             </table>
 
             <div class="checkout col-12 col-lg-4">
@@ -94,11 +78,11 @@
                         </tr>
                         <tr>
                             <th>Shipping</th>
-                            <td>5,50 €</td>
+                            <td>5.50 €</td>
                         </tr>
                     </tbody>
                 </table>
-                <a href="#" class="btn btn-success">Checkout</a>
+                <a href="checkout.html" class="btn btn-success" id="checkout-btn">Checkout</a>
             </div>
 
         </div>
@@ -156,6 +140,7 @@
     crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
