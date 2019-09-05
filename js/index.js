@@ -49,6 +49,7 @@ $(document).ready(function () {
 	if(window.location.href.search("checkout.html") != -1){
 		displayTotalPrice();
 		displayFinalPrice();
+		submit();
 	}
 });
 
@@ -171,7 +172,7 @@ function addItemToCart() {
 
 	toastr.options = {
 		"closeButton": true,
-		"positionClass": "toast-bottom-right",
+		"positionClass": "toast-top-right",
 		"preventDuplicates": true,
 		"timeOut": "2500"
 		};
@@ -310,7 +311,7 @@ function emptyCartToastr() {
 			event.preventDefault();
 			toastr.options = {
 				"closeButton": true,
-				"positionClass": "toast-bottom-right",
+				"positionClass": "toast-top-right",
 				"preventDuplicates": true,
 				"timeOut": "2500"
 				};
@@ -318,3 +319,39 @@ function emptyCartToastr() {
 		}
 	});
 }
+
+function submit() {
+	$("#checkout-form").on("submit", function(e) {
+		e.preventDefault();
+		localStorage.clear();
+		toastr.options = {
+			"closeButton": true,
+			"positionClass": "toast-top-center",
+			"preventDuplicates": true,
+			"timeOut": "6000"
+			};
+		toastr.options.onHidden = function() { window.location.replace("index.html"); };
+		toastr["success"]("Your order was completed successfully. We've sent you an e-mail confirmation. You will be automatically redirected to the homepage.", "Thank you.");
+	});
+}
+
+
+
+// Soon...
+
+// function submit() {
+// 	$("#checkout-form").on("submit", function(e) {
+// 		e.preventDefault();
+// 		$.post(" ", function() {
+// 			localStorage.clear();
+// 			toastr.options = {
+// 				"closeButton": true,
+// 				"positionClass": "toast-top-center",
+// 				"preventDuplicates": true,
+// 				"timeOut": "6000"
+// 				};
+// 			toastr.options.onHidden = function() { window.location.replace("index.html"); };
+// 			toastr["success"]("Your order was completed successfully. We've sent you an e-mail confirmation. You will be automatically redirected to the homepage.", "Thank you.");
+// 		});
+// 	});
+// }

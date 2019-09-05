@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="css/checkout.css">
 </head>
 <body class="checkout-page">
@@ -17,7 +18,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7" id="group-1">
-					<h1>Shoeniverse</h1>
+					<h1 >Shoeniverse</h1>
 
 					<div class="dynamic-checkout">
 						<h2>Express checkout</h2>
@@ -27,7 +28,7 @@
 						</div>
 					</div>
 
-					<form>
+					<form id="checkout-form">
 						<div class="form-group">
 							<label for="email">Contact Information</label>
 							<input type="email" class="form-control" id="email" placeholder="Email" required>
@@ -120,6 +121,7 @@
 		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="js/index.js"></script>
 </body>
 </html>
